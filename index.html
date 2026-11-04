@@ -1,9 +1,25 @@
 <!doctype html>
+<!--
+  DEBA web · Cuestionario de detección de barreras y facilitadores para la inclusión
+  Copyright (c) 2026 Pedro J. Lledó Sigüenza
+  Creado con la ayuda de la IA a partir de la herramienta DEBA de la Conselleria de Educación
+  de la Generalitat Valenciana. No es una herramienta oficial de la Conselleria.
+
+  SPDX-License-Identifier: EUPL-1.2
+  Licenciado bajo la Licencia Pública de la Unión Europea (EUPL) v1.2.
+  Texto oficial en castellano: https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12
+  La licencia cubre el código y el diseño de esta aplicación. Los textos del cuestionario
+  proceden de la herramienta DEBA original.
+
+  Incluye jsPDF 2.5.1 y jsPDF-AutoTable 3.8.2 (licencia MIT; sus avisos se conservan más abajo).
+  Código fuente: https://github.com/pjlledo/deba
+-->
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>DEBA · Barreras y facilitadores</title>
+<meta name="author" content="Pedro J. Lledó Sigüenza">
 <meta name="description" content="Cuestionario DEBA de detección de barreras y facilitadores para la inclusión. Genera el análisis DAFO en PDF. Las respuestas no salen del dispositivo.">
 <meta name="theme-color" content="#1d3a7a">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -98,7 +114,11 @@ details.info ul{padding-left:20px;margin:8px 0 0}
 .quads b{display:block;font-size:15px}
 .q-D{background:var(--deb-soft);color:var(--deb)} .q-A{background:var(--ame-soft);color:var(--ame)}
 .q-F{background:var(--for-soft);color:var(--for)} .q-O{background:var(--opo-soft);color:var(--opo)}
-.privacy{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--muted);padding:4px 2px 32px;margin:0}
+.privacy{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--muted);padding:4px 2px 4px;margin:0}
+.credits{border-top:1px solid var(--border);margin-top:20px;padding:16px 2px 32px;font-size:13px;line-height:1.55;color:var(--muted)}
+.credits p{margin:0 0 8px}
+.credits b{color:var(--text);font-weight:600}
+.credits a{color:var(--accent);text-underline-offset:2px}
 
 /* ---------- Barra superior ---------- */
 .topbar{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--border);padding-top:env(safe-area-inset-top)}
@@ -689,6 +709,14 @@ function route(){
 }
 window.addEventListener("hashchange", route);
 
+/* ---------- Autoría y licencia ---------- */
+const credits = () => `
+  <footer class="credits">
+    <p><b>DEBA web</b> · Creado por <b>Pedro J. Lledó Sigüenza</b> con la ayuda de la IA, a partir de la herramienta DEBA (Cuestionario de detección de barreras y facilitadores para la inclusión) de la Conselleria de Educación de la Generalitat Valenciana.</p>
+    <p>No es una herramienta oficial de la Conselleria. Los textos del cuestionario proceden de la herramienta original.</p>
+    <p>© 2026 Pedro J. Lledó Sigüenza · Código bajo licencia <a href="https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12" target="_blank" rel="noopener">EUPL 1.2</a> · <a href="https://github.com/pjlledo/deba" target="_blank" rel="noopener">Código fuente</a> · Incluye jsPDF y jsPDF-AutoTable (licencia MIT).</p>
+  </footer>`;
+
 /* ---------- Pantalla: inicio ---------- */
 function renderHome(){
   document.title = "DEBA · Barreras y facilitadores";
@@ -734,6 +762,7 @@ function renderHome(){
       </details>
       <p class="privacy">${icon("lock",'style="width:18px;height:18px;margin-top:2px"')}<span>Las respuestas se guardan solo en este dispositivo, para que no se pierdan si cierras la página. No se envían a ningún servidor. El PDF se genera en tu propio teléfono u ordenador.</span></p>
     </div>
+    ${credits()}
   </div>`;
   const al = $("#alumno"), hint = $("#alumnoHint");
   const checkName = () => {
@@ -909,6 +938,7 @@ function renderResult(){
     ${[1,2,3].map(dimDetail).join("")}
     <p class="hint" style="text-align:center">Toca cualquier ítem para cambiar su respuesta.</p>
     <div style="text-align:center"><button class="link" id="newStudent">Empezar con otro alumno/a</button></div>
+    ${credits()}
   </main>
   <nav class="bottombar" aria-label="Descargar resultado">
     <div class="wrap">
