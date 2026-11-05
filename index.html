@@ -119,6 +119,9 @@ details.info ul{padding-left:20px;margin:8px 0 0}
 .credits p{margin:0 0 8px}
 .credits b{color:var(--text);font-weight:600}
 .credits a{color:var(--accent);text-underline-offset:2px}
+.notice{display:flex;gap:10px;align-items:flex-start;background:var(--accent-soft);border:0;box-shadow:none;padding:14px 16px;font-size:15px;color:var(--text)}
+.notice p{margin:0} .notice svg{color:var(--accent)}
+.notice a{color:var(--accent);font-weight:600;text-underline-offset:2px}
 
 /* ---------- Barra superior ---------- */
 .topbar{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--border);padding-top:env(safe-area-inset-top)}
@@ -714,7 +717,7 @@ const credits = () => `
   <footer class="credits">
     <p><b>DEBA web</b> · Creado por <b>Pedro J. Lledó Sigüenza</b> con la ayuda de la IA, a partir de la herramienta DEBA (Cuestionario de detección de barreras y facilitadores para la inclusión) de la Conselleria de Educación de la Generalitat Valenciana.</p>
     <p>No es una herramienta oficial de la Conselleria. Los textos del cuestionario proceden de la herramienta original.</p>
-    <p>© 2026 Pedro J. Lledó Sigüenza · Código bajo licencia <a href="https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12" target="_blank" rel="noopener">EUPL 1.2</a> · <a href="https://github.com/pjlledo/deba" target="_blank" rel="noopener">Código fuente</a> · Incluye jsPDF y jsPDF-AutoTable (licencia MIT).</p>
+    <p>© 2026 Pedro J. Lledó Sigüenza · Código bajo licencia <a href="https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12" target="_blank" rel="noopener">EUPL 1.2</a> · <a href="https://github.com/pjlledo/deba" target="_blank" rel="noopener">Código fuente</a> · <a href="https://pjlledo.github.io/minideba/" target="_blank" rel="noopener">minideba (versión reducida)</a> · Incluye jsPDF y jsPDF-AutoTable (licencia MIT).</p>
   </footer>`;
 
 /* ---------- Pantalla: inicio ---------- */
@@ -730,6 +733,7 @@ function renderHome(){
       <p class="lead">Responde ${TOTAL} preguntas sobre un alumno o alumna y descarga su análisis DAFO en PDF.</p>
     </header>
     <div class="stack">
+      ${started ? "" : `<div class="card notice" id="toMini">${icon("info",'style="width:20px;height:20px;margin-top:2px"')}<p><b>¿Poco tiempo?</b> Prueba <a href="https://pjlledo.github.io/minideba/" target="_blank" rel="noopener">minideba</a>, la versión reducida: 45 preguntas y un PDF de dos páginas.</p></div>`}
       ${started ? `
       <div class="card resume">
         <div class="ring" style="--p:${Math.round(done/TOTAL*100)}"><span>${done}/${TOTAL}</span></div>

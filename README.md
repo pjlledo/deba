@@ -6,6 +6,8 @@
 
 Se responden las 80 preguntas del cuestionario DEBA sobre un alumno o alumna y se descarga su análisis DAFO (debilidades, amenazas, fortalezas y oportunidades) en PDF.
 
+> **¿Poco tiempo?** Existe [minideba](https://pjlledo.github.io/minideba/), una versión reducida de 45 preguntas que genera un PDF de dos páginas como máximo ([código](https://github.com/pjlledo/minideba)).
+
 ## Privacidad
 
 - Las respuestas se guardan solo en el dispositivo de quien responde. No se envían a ningún servidor.
