@@ -6,6 +6,8 @@
 
 Forma parte de [orienteca.es](https://orienteca.es/), biblioteca de recursos y utilidades para la orientación y la inclusión educativa.
 
+**En castellano y en valenciano.** La aplicación usa el idioma del dispositivo y se puede cambiar con el selector *Castellano / Valencià*; el PDF sale en el idioma elegido. El texto valenciano procede de la versión oficial en valenciano del DEBA de la Conselleria, con algunas erratas corregidas y los enunciados del DAFO en primera persona, como en castellano.
+
 Se responden las 80 preguntas del cuestionario DEBA sobre un alumno o alumna y se descarga su análisis DAFO (debilidades, amenazas, fortalezas y oportunidades) en PDF.
 
 > **¿Poco tiempo?** Existe [minideba](https://minideba.orienteca.es/), una versión reducida de 45 preguntas que genera un PDF de dos páginas como máximo ([código](https://github.com/pjlledo/minideba)).
@@ -44,7 +46,7 @@ En resumen, cualquiera puede usar, copiar, modificar y redistribuir la aplicaci�
 - conserve el aviso de autoría y de licencia;
 - si distribuye una versión modificada, la publique también bajo la EUPL 1.2 (u otra licencia compatible de las que enumera la propia EUPL) y ponga su código a disposición.
 
-**Alcance:** la licencia cubre el código y el diseño de esta aplicación. Los textos del cuestionario (preguntas, aclaraciones y enunciados del DAFO) proceden de la herramienta DEBA original y conservan los derechos de sus autores.
+**Alcance:** la licencia cubre el código y el diseño de esta aplicación. Los textos del cuestionario (preguntas, aclaraciones y enunciados del DAFO, en castellano y en valenciano) proceden de la herramienta DEBA original y conservan los derechos de sus autores.
 
 **Componentes de terceros** (incluidos dentro de `index.html`, con sus avisos de copyright):
 
