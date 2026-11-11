@@ -12,7 +12,7 @@
   proceden de la herramienta DEBA original.
 
   Incluye jsPDF 2.5.1 y jsPDF-AutoTable 3.8.2 (licencia MIT; sus avisos se conservan más abajo).
-  Código fuente: https://github.com/pjlledo/deba
+  Web: https://deba.orienteca.es/ · Código fuente: https://github.com/pjlledo/deba
 -->
 <html lang="es">
 <head>
@@ -717,7 +717,8 @@ const credits = () => `
   <footer class="credits">
     <p><b>DEBA web</b> · Creado por <b>Pedro J. Lledó Sigüenza</b> con la ayuda de la IA, a partir de la herramienta DEBA (Cuestionario de detección de barreras y facilitadores para la inclusión) de la Conselleria de Educación de la Generalitat Valenciana.</p>
     <p>No es una herramienta oficial de la Conselleria. Los textos del cuestionario proceden de la herramienta original.</p>
-    <p>© 2026 Pedro J. Lledó Sigüenza · Código bajo licencia <a href="https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12" target="_blank" rel="noopener">EUPL 1.2</a> · <a href="https://github.com/pjlledo/deba" target="_blank" rel="noopener">Código fuente</a> · <a href="https://pjlledo.github.io/minideba/" target="_blank" rel="noopener">minideba (versión reducida)</a> · Incluye jsPDF y jsPDF-AutoTable (licencia MIT).</p>
+    <p>© 2026 Pedro J. Lledó Sigüenza · Código bajo licencia <a href="https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12" target="_blank" rel="noopener">EUPL 1.2</a> · <a href="https://github.com/pjlledo/deba" target="_blank" rel="noopener">Código fuente</a> · <a href="https://minideba.orienteca.es/" target="_blank" rel="noopener">minideba (versión reducida)</a> · Incluye jsPDF y jsPDF-AutoTable (licencia MIT).</p>
+  <p>Más recursos para la orientación y la inclusión en <a href="https://orienteca.es/" target="_blank" rel="noopener">orienteca.es</a>.</p>
   </footer>`;
 
 /* ---------- Pantalla: inicio ---------- */
@@ -733,7 +734,7 @@ function renderHome(){
       <p class="lead">Responde ${TOTAL} preguntas sobre un alumno o alumna y descarga su análisis DAFO en PDF.</p>
     </header>
     <div class="stack">
-      ${started ? "" : `<div class="card notice" id="toMini">${icon("info",'style="width:20px;height:20px;margin-top:2px"')}<p><b>¿Poco tiempo?</b> Prueba <a href="https://pjlledo.github.io/minideba/" target="_blank" rel="noopener">minideba</a>, la versión reducida: 45 preguntas y un PDF de dos páginas.</p></div>`}
+      ${started ? "" : `<div class="card notice" id="toMini">${icon("info",'style="width:20px;height:20px;margin-top:2px"')}<p><b>¿Poco tiempo?</b> Prueba <a href="https://minideba.orienteca.es/" target="_blank" rel="noopener">minideba</a>, la versión reducida: 45 preguntas y un PDF de dos páginas.</p></div>`}
       ${started ? `
       <div class="card resume">
         <div class="ring" style="--p:${Math.round(done/TOTAL*100)}"><span>${done}/${TOTAL}</span></div>

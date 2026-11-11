@@ -2,11 +2,13 @@
 
 **Cuestionario de detección de barreras y facilitadores para la inclusión, en versión web para móvil.**
 
-👉 **Abrir la aplicación: https://pjlledo.github.io/deba/**
+👉 **Abrir la aplicación: https://deba.orienteca.es/**
+
+Forma parte de [orienteca.es](https://orienteca.es/), biblioteca de recursos y utilidades para la orientación y la inclusión educativa.
 
 Se responden las 80 preguntas del cuestionario DEBA sobre un alumno o alumna y se descarga su análisis DAFO (debilidades, amenazas, fortalezas y oportunidades) en PDF.
 
-> **¿Poco tiempo?** Existe [minideba](https://pjlledo.github.io/minideba/), una versión reducida de 45 preguntas que genera un PDF de dos páginas como máximo ([código](https://github.com/pjlledo/minideba)).
+> **¿Poco tiempo?** Existe [minideba](https://minideba.orienteca.es/), una versión reducida de 45 preguntas que genera un PDF de dos páginas como máximo ([código](https://github.com/pjlledo/minideba)).
 
 ## Privacidad
 
